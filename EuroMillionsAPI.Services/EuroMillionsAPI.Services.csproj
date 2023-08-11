@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\EuroMillionsAPI.Repository\EuroMillionsAPI.Repository.csproj" />
+    <ProjectReference Include="..\EuroMillionsAPI.ServiceContracts\EuroMillionsAPI.ServiceContracts.csproj" />
+  </ItemGroup>
+
 </Project>

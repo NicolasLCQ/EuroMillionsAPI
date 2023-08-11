@@ -3,25 +3,24 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.API", "EuroMillionsAPI.API\EuroMillionsAPI.API.csproj", "{1D88487C-ED96-4333-BBA7-C74ED82D9A57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.API", "EuroMillionsAPI.API\EuroMillionsAPI.API.csproj", "{1D88487C-ED96-4333-BBA7-C74ED82D9A57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.Tests", "EuroMillionsAPI.Tests\EuroMillionsAPI.Tests.csproj", "{98B9BFDB-5A7F-4774-A198-0A1921E8427C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Tests", "EuroMillionsAPI.Tests\EuroMillionsAPI.Tests.csproj", "{98B9BFDB-5A7F-4774-A198-0A1921E8427C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.Entities", "EuroMillionsAPI.Entities\EuroMillionsAPI.Entities.csproj", "{CC1803A7-9790-479D-9436-8C08E833F158}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Entities", "EuroMillionsAPI.Entities\EuroMillionsAPI.Entities.csproj", "{CC1803A7-9790-479D-9436-8C08E833F158}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.Models", "EuroMillionsAPI.Models\EuroMillionsAPI.Models.csproj", "{F76D4206-B5DB-4AB4-8F70-75FC17125422}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Models", "EuroMillionsAPI.Models\EuroMillionsAPI.Models.csproj", "{F76D4206-B5DB-4AB4-8F70-75FC17125422}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.Repository", "EuroMillionsAPI.Repository\EuroMillionsAPI.Repository.csproj", "{2F77AC34-0683-4D6C-8AF4-A3257499D9EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Repository", "EuroMillionsAPI.Repository\EuroMillionsAPI.Repository.csproj", "{2F77AC34-0683-4D6C-8AF4-A3257499D9EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.Services", "EuroMillionsAPI.Services\EuroMillionsAPI.Services.csproj", "{31FD24A6-4B0C-4786-A12A-0E649F241319}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Services", "EuroMillionsAPI.Services\EuroMillionsAPI.Services.csproj", "{31FD24A6-4B0C-4786-A12A-0E649F241319}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.ServiceContracts", "EuroMillionsAPI.ServiceContracts\EuroMillionsAPI.ServiceContracts.csproj", "{844184CE-3EB5-4138-8CD0-89ED185DAA67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{1D88487C-ED96-4333-BBA7-C74ED82D9A57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -48,5 +47,15 @@ Global
 		{31FD24A6-4B0C-4786-A12A-0E649F241319}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{31FD24A6-4B0C-4786-A12A-0E649F241319}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{31FD24A6-4B0C-4786-A12A-0E649F241319}.Release|Any CPU.Build.0 = Release|Any CPU
+		{844184CE-3EB5-4138-8CD0-89ED185DAA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{844184CE-3EB5-4138-8CD0-89ED185DAA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{844184CE-3EB5-4138-8CD0-89ED185DAA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{844184CE-3EB5-4138-8CD0-89ED185DAA67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66E2089E-0140-4EFD-ACB0-F1F987AA8582}
 	EndGlobalSection
 EndGlobal
