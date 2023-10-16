@@ -22,11 +22,6 @@ builder.Services.AddDbContext<EuromillionDbContext>(
                             new MySqlServerVersion(new Version(8, 0, 32)),
                             b => b.MigrationsAssembly("EuroMillionsAPI.API")
                         )
-            // The following three options help with debugging, but should
-            // be changed or removed for production.
-            //.LogTo(Console.WriteLine, LogLevel.Information)
-            //.EnableSensitiveDataLogging()
-            //.EnableDetailedErrors()
         );
 
 var app = builder.Build();

@@ -8,14 +8,12 @@ namespace EuroMillionsAPI.API.Controllers
     [Route("[controller]")]
     public class DrawController : ControllerBase
     {
-
         public DrawService _drawService { get; set; }
         public DrawController(DrawService drawService) {
             _drawService = drawService;
         }
 
-
-        [HttpGet(Name = "GetDraws")]
+        [HttpGet(Name = "GetAll")]
         public IEnumerable<Draw> Get()
         {
             return _drawService.getAll();
