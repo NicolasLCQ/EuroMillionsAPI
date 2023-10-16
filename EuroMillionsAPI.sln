@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Repository"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Services", "EuroMillionsAPI.Services\EuroMillionsAPI.Services.csproj", "{31FD24A6-4B0C-4786-A12A-0E649F241319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EuroMillionsAPI.ServiceContracts", "EuroMillionsAPI.ServiceContracts\EuroMillionsAPI.ServiceContracts.csproj", "{844184CE-3EB5-4138-8CD0-89ED185DAA67}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.ServiceContracts", "EuroMillionsAPI.ServiceContracts\EuroMillionsAPI.ServiceContracts.csproj", "{844184CE-3EB5-4138-8CD0-89ED185DAA67}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Downloader", "EuroMillionsAPI.Downloader\EuroMillionsAPI.Downloader.csproj", "{858F60DC-0325-41C3-A099-4E01933C61C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{844184CE-3EB5-4138-8CD0-89ED185DAA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{844184CE-3EB5-4138-8CD0-89ED185DAA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{844184CE-3EB5-4138-8CD0-89ED185DAA67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{858F60DC-0325-41C3-A099-4E01933C61C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{858F60DC-0325-41C3-A099-4E01933C61C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{858F60DC-0325-41C3-A099-4E01933C61C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{858F60DC-0325-41C3-A099-4E01933C61C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
