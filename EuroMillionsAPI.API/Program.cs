@@ -1,5 +1,6 @@
 using EuroMillionsAPI.Repository;
 using EuroMillionsAPI.Services;
+using EuroMillionsAPI.Synchronizer;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +11,8 @@ builder.Services.AddControllers();
 
 builder.Services.AddScoped<SharedService>();
 builder.Services.AddScoped<DrawService>();
+
+builder.Services.AddScoped<Downloader>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -22,11 +25,6 @@ builder.Services.AddDbContext<EuromillionDbContext>(
                             new MySqlServerVersion(new Version(8, 0, 32)),
                             b => b.MigrationsAssembly("EuroMillionsAPI.API")
                         )
-            // The following three options help with debugging, but should
-            // be changed or removed for production.
-            //.LogTo(Console.WriteLine, LogLevel.Information)
-            //.EnableSensitiveDataLogging()
-            //.EnableDetailedErrors()
         );
 
 var app = builder.Build();

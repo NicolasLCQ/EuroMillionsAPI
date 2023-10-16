@@ -10,7 +10,6 @@ public class EuromillionDbContext : DbContext
 
     }
 
-    //public DbSet<Draw> Draws { get; set; }
     public DbSet<Draw> Draws { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
