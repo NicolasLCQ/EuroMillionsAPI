@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace EuroMillionsAPI.API.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("[controller]/[action]")]
     public class DrawController : ControllerBase
     {
         public DrawService _drawService { get; set; }
