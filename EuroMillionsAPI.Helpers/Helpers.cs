@@ -3,18 +3,18 @@ using System.IO.Compression;
 
 namespace EuroMillionsAPI.Synchronizer
 {
-    public class Downloader
+    public class Helpers
     {
         private ScrapperServices scrapperServices;
         private ParserServices parserServices;
 
-        public Downloader()
+        public Helpers()
         {
             this.parserServices = new ParserServices();
             this.scrapperServices = new ScrapperServices();
         }
 
-        public string DownloadDrawResultFromFdjHistory()
+        public string DownloadDrawResultFromFdjHistoryToTempDir()
         {
             //Get Links
             List<string> links = parserServices.getDownloadLinksFromFdjHistoryHtmlPage(

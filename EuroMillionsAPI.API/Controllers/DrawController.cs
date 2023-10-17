@@ -10,8 +10,8 @@ namespace EuroMillionsAPI.API.Controllers
     public class DrawController : ControllerBase
     {
         public DrawService _drawService { get; set; }
-        public Downloader _downloader { get; set; }
-        public DrawController(DrawService drawService, Downloader downloader)
+        public Helpers _downloader { get; set; }
+        public DrawController(DrawService drawService, Helpers downloader)
         {
             _drawService = drawService;
             _downloader = downloader;

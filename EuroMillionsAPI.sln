@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Services", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.ServiceContracts", "EuroMillionsAPI.ServiceContracts\EuroMillionsAPI.ServiceContracts.csproj", "{844184CE-3EB5-4138-8CD0-89ED185DAA67}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Downloader", "EuroMillionsAPI.Downloader\EuroMillionsAPI.Downloader.csproj", "{858F60DC-0325-41C3-A099-4E01933C61C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EuroMillionsAPI.Helpers", "EuroMillionsAPI.Downloader\EuroMillionsAPI.Helpers.csproj", "{858F60DC-0325-41C3-A099-4E01933C61C1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
