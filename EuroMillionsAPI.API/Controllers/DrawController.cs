@@ -1,7 +1,7 @@
 ﻿using EuroMillionsAPI.Entities;
 using EuroMillionsAPI.Services;
-using EuroMillionsAPI.Synchronizer;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace EuroMillionsAPI.API.Controllers
 {
@@ -10,11 +10,11 @@ namespace EuroMillionsAPI.API.Controllers
     public class DrawController : ControllerBase
     {
         public DrawService _drawService { get; set; }
-        public Helpers _downloader { get; set; }
-        public DrawController(DrawService drawService, Helpers downloader)
+        public Helpers _helper { get; set; }
+        public DrawController(DrawService drawService, Helpers helper)
         {
             _drawService = drawService;
-            _downloader = downloader;
+            _helper = helper;
         }
 
         [HttpGet(Name = "GetAll")]
@@ -26,7 +26,7 @@ namespace EuroMillionsAPI.API.Controllers
         [HttpPost(Name = "Synchornize")]
         public void Synchronize()
         {
-            _downloader.DownloadDrawResultFromFdjHistory();
+            string tempDir = _helper.DownloadDrawResultFromFdjHistoryToTempDir();
         }
 
 

@@ -1,4 +1,4 @@
-﻿namespace EuroMillionsAPI.Synchronizer.Services
+﻿namespace EuroMillionsAPI.Helpers.Services
 {
     using HtmlAgilityPack;
 

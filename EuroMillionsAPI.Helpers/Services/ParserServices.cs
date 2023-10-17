@@ -1,6 +1,6 @@
 ﻿using HtmlAgilityPack;
 
-namespace EuroMillionsAPI.Synchronizer.Services
+namespace EuroMillionsAPI.Helpers.Services
 {
     public class ParserServices
     {

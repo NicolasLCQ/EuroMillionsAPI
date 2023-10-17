@@ -1,6 +1,6 @@
+using EuroMillionsAPI.Helpers;
 using EuroMillionsAPI.Repository;
 using EuroMillionsAPI.Services;
-using EuroMillionsAPI.Synchronizer;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,7 +1,7 @@
-﻿using EuroMillionsAPI.Synchronizer.Services;
+﻿using EuroMillionsAPI.Helpers.Services;
 using System.IO.Compression;
 
-namespace EuroMillionsAPI.Synchronizer
+namespace EuroMillionsAPI.Helpers
 {
     public class Helpers
     {
