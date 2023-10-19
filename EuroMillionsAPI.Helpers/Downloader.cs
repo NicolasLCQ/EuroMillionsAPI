@@ -3,18 +3,18 @@ using System.IO.Compression;
 
 namespace EuroMillionsAPI.Helpers
 {
-    public class Helpers
+    public class Downloader
     {
-        private ScrapperServices scrapperServices;
-        private ParserServices parserServices;
+        private readonly ScrapperServices scrapperServices;
+        private readonly ParserServices parserServices;
 
-        public Helpers()
+        public Downloader()
         {
             this.parserServices = new ParserServices();
             this.scrapperServices = new ScrapperServices();
         }
 
-        public string DownloadDrawResultFromFdjHistoryToTempDir()
+        public void DownloadDrawResultFromFdjHistoryToDir(string directoryPath)
         {
             //Get Links
             List<string> links = parserServices.getDownloadLinksFromFdjHistoryHtmlPage(
@@ -22,24 +22,20 @@ namespace EuroMillionsAPI.Helpers
             );
 
             //Download links
-            var directoryObject = Directory.CreateTempSubdirectory();
-
             var downloadTasks = new List<Task>();
             foreach (string link in links)
             {
-                downloadTasks.Add(scrapperServices.DownloadFileFromTo(link, directoryObject.FullName));
+                downloadTasks.Add(scrapperServices.DownloadFileFromTo(link, directoryPath));
             }
             Task.WhenAll(downloadTasks).Wait();
 
             //Unzip File
-            var archives = Directory.GetFiles(directoryObject.FullName);
+            var archives = Directory.GetFiles(directoryPath);
             foreach (string archive in archives)
             {
-                ZipFile.ExtractToDirectory(archive, directoryObject.FullName);
+                ZipFile.ExtractToDirectory(archive, directoryPath);
                 File.Delete(archive);
             }
-
-            return directoryObject.FullName;
         }
     }
 }

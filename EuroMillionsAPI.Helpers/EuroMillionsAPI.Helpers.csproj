@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.11.53" />
+    <PackageReference Include="CsvHelper" Version="30.0.1" />
+    <PackageReference Include="HtmlAgilityPack" Version="1.11.54" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EuroMillionsAPI.Entities\EuroMillionsAPI.Entities.csproj" />
   </ItemGroup>
 
 </Project>

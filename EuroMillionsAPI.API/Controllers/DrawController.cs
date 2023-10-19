@@ -1,4 +1,5 @@
 ﻿using EuroMillionsAPI.Entities;
+using EuroMillionsAPI.Helpers;
 using EuroMillionsAPI.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,11 +11,13 @@ namespace EuroMillionsAPI.API.Controllers
     public class DrawController : ControllerBase
     {
         public DrawService _drawService { get; set; }
-        public Helpers _helper { get; set; }
-        public DrawController(DrawService drawService, Helpers helper)
+        public Downloader _downlaoder { get; set; }
+        public CsvParser _csvParser { get; set; }
+        public DrawController(DrawService drawService, Downloader helper, CsvParser csvParser)
         {
-            _drawService = drawService;
-            _helper = helper;
+            this._drawService = drawService;
+            this._downlaoder = helper;
+            this._csvParser = csvParser;
         }
 
         [HttpGet(Name = "GetAll")]
@@ -24,9 +27,16 @@ namespace EuroMillionsAPI.API.Controllers
         }
 
         [HttpPost(Name = "Synchornize")]
-        public void Synchronize()
+        public List<Draw> Synchronize()
         {
-            string tempDir = _helper.DownloadDrawResultFromFdjHistoryToTempDir();
+            string tempDir = Directory.CreateTempSubdirectory().FullName;
+
+            _downlaoder.DownloadDrawResultFromFdjHistoryToDir(tempDir);
+            List<Draw> draws = _csvParser.getAllDrawsFromDirectoryContainingEuromillionCsvFiles(tempDir);
+
+            Directory.Delete(tempDir);
+
+            return draws;
         }
 
 

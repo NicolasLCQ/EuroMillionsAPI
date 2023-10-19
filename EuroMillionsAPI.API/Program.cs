@@ -12,7 +12,8 @@ builder.Services.AddControllers();
 builder.Services.AddScoped<SharedService>();
 builder.Services.AddScoped<DrawService>();
 
-builder.Services.AddScoped<Helpers>();
+builder.Services.AddScoped<Downloader>();
+builder.Services.AddScoped<CsvParser>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
