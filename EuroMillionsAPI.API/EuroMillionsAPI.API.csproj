@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\EuroMillionsAPI.Downloader\EuroMillionsAPI.Downloader.csproj" />
+    <ProjectReference Include="..\EuroMillionsAPI.Helpers\EuroMillionsAPI.Helpers.csproj" />
     <ProjectReference Include="..\EuroMillionsAPI.Repository\EuroMillionsAPI.Repository.csproj" />
     <ProjectReference Include="..\EuroMillionsAPI.Services\EuroMillionsAPI.Services.csproj" />
   </ItemGroup>

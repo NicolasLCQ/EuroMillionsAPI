@@ -1,12 +1,12 @@
-﻿using EuroMillionsAPI.Synchronizer.Services;
+﻿using EuroMillionsAPI.Helpers.Services;
 using System.IO.Compression;
 
-namespace EuroMillionsAPI.Synchronizer
+namespace EuroMillionsAPI.Helpers
 {
     public class Downloader
     {
-        private ScrapperServices scrapperServices;
-        private ParserServices parserServices;
+        private readonly ScrapperServices scrapperServices;
+        private readonly ParserServices parserServices;
 
         public Downloader()
         {
@@ -14,7 +14,7 @@ namespace EuroMillionsAPI.Synchronizer
             this.scrapperServices = new ScrapperServices();
         }
 
-        public string DownloadDrawResultFromFdjHistory()
+        public void DownloadDrawResultFromFdjHistoryToDir(string directoryPath)
         {
             //Get Links
             List<string> links = parserServices.getDownloadLinksFromFdjHistoryHtmlPage(
@@ -22,24 +22,20 @@ namespace EuroMillionsAPI.Synchronizer
             );
 
             //Download links
-            var directoryObject = Directory.CreateTempSubdirectory();
-
             var downloadTasks = new List<Task>();
             foreach (string link in links)
             {
-                downloadTasks.Add(scrapperServices.DownloadFileFromTo(link, directoryObject.FullName));
+                downloadTasks.Add(scrapperServices.DownloadFileFromTo(link, directoryPath));
             }
             Task.WhenAll(downloadTasks).Wait();
 
             //Unzip File
-            var archives = Directory.GetFiles(directoryObject.FullName);
+            var archives = Directory.GetFiles(directoryPath);
             foreach (string archive in archives)
             {
-                ZipFile.ExtractToDirectory(archive, directoryObject.FullName);
+                ZipFile.ExtractToDirectory(archive, directoryPath);
                 File.Delete(archive);
             }
-
-            return directoryObject.FullName;
         }
     }
 }

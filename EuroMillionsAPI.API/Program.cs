@@ -1,6 +1,6 @@
+using EuroMillionsAPI.Helpers;
 using EuroMillionsAPI.Repository;
 using EuroMillionsAPI.Services;
-using EuroMillionsAPI.Synchronizer;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +13,7 @@ builder.Services.AddScoped<SharedService>();
 builder.Services.AddScoped<DrawService>();
 
 builder.Services.AddScoped<Downloader>();
+builder.Services.AddScoped<CsvParser>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
