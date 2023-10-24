@@ -14,4 +14,10 @@ public class DrawService : SharedService
         return Repository.Draws.ToList();
     }
 
+    public void add(List<Draw> draws)
+    {
+        Repository.Draws.AddRange(draws);
+        Repository.SaveChanges();
+    }
+
 }

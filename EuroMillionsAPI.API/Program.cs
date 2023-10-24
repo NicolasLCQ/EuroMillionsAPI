@@ -21,12 +21,15 @@ builder.Services.AddSwaggerGen();
 
 // https://www.nuget.org/packages/Pomelo.EntityFrameworkCore.MySql
 builder.Services.AddDbContext<EuromillionDbContext>(
-            dbContextOptions => dbContextOptions
-                .UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
-                            new MySqlServerVersion(new Version(8, 0, 32)),
-                            b => b.MigrationsAssembly("EuroMillionsAPI.API")
-                        )
-        );
+    dbContextOptions => dbContextOptions
+        .UseMySql(
+            builder.Configuration.GetConnectionString("DefaultConnection"),
+            new MySqlServerVersion(
+                new Version(8, 0, 32)),
+                b => b.MigrationsAssembly("EuroMillionsAPI.API")
+            )
+
+);
 
 var app = builder.Build();
 
