@@ -12,15 +12,9 @@ public class EuromillionDbContext : DbContext
 
     public DbSet<Draw> Draws { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    {
-        Database.CanConnectAsync().Wait();
-        Database.Migrate();
-    }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new DrawMap());
-
     }
 
 }
