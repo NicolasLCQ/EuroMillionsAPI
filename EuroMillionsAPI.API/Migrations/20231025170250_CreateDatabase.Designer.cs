@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EuroMillionsAPI.API.Migrations
 {
     [DbContext(typeof(EuromillionDbContext))]
-    [Migration("20230810124448_Initial2")]
-    partial class Initial2
+    [Migration("20231025170250_CreateDatabase")]
+    partial class CreateDatabase
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -2,7 +2,7 @@
 using EuroMillionsAPI.Helpers;
 using EuroMillionsAPI.Services;
 using Microsoft.AspNetCore.Mvc;
-
+using System.Net;
 
 namespace EuroMillionsAPI.API.Controllers
 {
@@ -23,7 +23,7 @@ namespace EuroMillionsAPI.API.Controllers
         [HttpGet(Name = "GetAll")]
         public IEnumerable<Draw> Get()
         {
-            return _drawService.getAll();
+            return _drawService.GetAll();
         }
 
         [HttpPost(Name = "Synchornize")]
@@ -34,8 +34,9 @@ namespace EuroMillionsAPI.API.Controllers
             _downlaoder.DownloadDrawResultFromFdjHistoryToDir(tempDir);
             List<Draw> draws = _csvParser.getAllDrawsFromDirectoryContainingEuromillionCsvFiles(tempDir);
 
-            Directory.Delete(tempDir);
+            _drawService.Add(draws);
 
+            Directory.Delete(tempDir);
             return draws;
         }
 

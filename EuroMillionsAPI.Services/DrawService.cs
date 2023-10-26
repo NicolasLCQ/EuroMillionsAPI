@@ -9,9 +9,15 @@ public class DrawService : SharedService
     {
     }
 
-    public IEnumerable<Draw> getAll()
+    public List<Draw> GetAll()
     {
         return Repository.Draws.ToList();
+    }
+
+    public void Add(List<Draw> draws)
+    {
+        Repository.Draws.AddRange(draws);
+        Repository.SaveChanges();
     }
 
 }
