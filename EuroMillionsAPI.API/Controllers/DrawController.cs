@@ -21,7 +21,7 @@ namespace EuroMillionsAPI.API.Controllers
         }
 
         [HttpGet(Name = "GetAll")]
-        public IEnumerable<Draw> Get()
+        public IEnumerable<Draw> GetAll()
         {
             return _drawService.GetAll();
         }
@@ -34,6 +34,7 @@ namespace EuroMillionsAPI.API.Controllers
             _downlaoder.DownloadDrawResultFromFdjHistoryToDir(tempDir);
             List<Draw> draws = _csvParser.getAllDrawsFromDirectoryContainingEuromillionCsvFiles(tempDir);
 
+            _drawService.Clear();
             _drawService.Add(draws);
 
             Directory.Delete(tempDir);
