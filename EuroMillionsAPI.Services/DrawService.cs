@@ -1,5 +1,6 @@
 ﻿using EuroMillionsAPI.Entities;
 using EuroMillionsAPI.Repository;
+using Microsoft.EntityFrameworkCore;
 
 namespace EuroMillionsAPI.Services;
 
@@ -17,6 +18,12 @@ public class DrawService : SharedService
     public void Add(List<Draw> draws)
     {
         Repository.Draws.AddRange(draws);
+        Repository.SaveChanges();
+    }
+
+    public void Clear()
+    {
+        Repository.Draws.ExecuteDelete();
         Repository.SaveChanges();
     }
 
