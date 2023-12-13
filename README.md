@@ -7,12 +7,12 @@ L'API permet de synchroniser la base de donnée et de get les données.
 
 Ce code a été fait rapidement pour apprendre les bases du c# et ne comporte pas de tests.
 
-#Technos :
+# Technos :
 
 C#
 SQL database
 
-#Prérequis :
+# Prérequis :
 
 1) Installer un serveur d'instance de base de donnée
     - MySqld a été utilisé lors du développement
